@@ -1,65 +1,57 @@
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import SocialMedia from '../components/SocialMedia'
+import Section from '../components/Section';
+import Spinner from '../components/Spinner';
+import RequestService from '../services/RequestServices'
+import List from '../components/List'
 
 export default function Home() {
+  const [viewHubPro, setViewHubPro] = useState(true)
+  const [viewHubQualy, setViewHubQualy] = useState(false)
+  const [showSpinner, setShowSpinner] = useState(false)
+  const [collection, setCollection] = useState([])
+
+  
+
+  useEffect(() => {
+    setShowSpinner(true)
+    let id
+    if(viewHubPro){
+      id = process.env.NEXT_PUBLIC_ID_HUB_PRO
+    } else {
+      id = process.env.NEXT_PUBLIC_ID_HUB_QUALY
+    }
+    RequestService({ hubId: id, param: 'stats'})
+    .then(response => response.json())
+    .then(result =>{
+      setShowSpinner(false)
+      setCollection(result.players)
+    })
+    .catch(error =>{
+      setShowSpinner(false)
+      console.log("users: ", error)
+    })
+    
+  }, [viewHubPro])
+    
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+    <div>
+      <div className="py-5 mx-auto" >
+        <img src="logo.svg"  className=" h-1/4 w-1/4 mx-auto"/>
+      </div>
+      <SocialMedia />
+      <div className="flex items-center space-x-3 mt-7 justify-center py-6">
+        <Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} />
+        <Section title="HUB QUALY" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} />
+      </div>
+      <div>
+        {showSpinner ? <Spinner isActive={showSpinner} /> : null}
+        <List collection={collection} />
+      </div>
+     
+     
     </div>
   )
 }
