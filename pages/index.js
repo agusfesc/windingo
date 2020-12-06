@@ -28,10 +28,9 @@ export default function Home() {
       setLoading(false)
       setLeaderboard(results.leaderboard)
       setUsers(results.items)
-      console.log(results)
     })
     .catch(error =>{
-      console.log("users: ", error)
+      console.log(error)
     })
   }, [viewHubPro])
     

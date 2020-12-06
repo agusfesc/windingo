@@ -30,7 +30,7 @@ const Stats = () => {
       setCollection(result.players)
     })
     .catch(error =>{
-      console.log("users: ", error)
+      console.log(error)
     })
     
   }, [viewHubPro])

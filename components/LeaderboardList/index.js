@@ -25,7 +25,7 @@ const LeaderboardList = ({leaderboard = [], users = [], viewHubPro,}) => {
               prizePool = hubQualyPrizePool
             }
             return(
-              <tr key={user.user_id} >
+              <tr key={index} >
                 <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg"> {user.player['nickname']} </td>
                 <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg "> {user['points']} </td>
                 <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg "> {user['won']}</td>
