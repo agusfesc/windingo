@@ -1,6 +1,6 @@
 const baseURL = process.env.NEXT_PUBLIC_FACEIT_URL
 
-function RequestService ({ hubId, param }) {
+function RequestService ({ param }) {
   var myHeaders = new Headers()
   myHeaders.append("Authorization", `Bearer ${process.env.NEXT_PUBLIC_FACEIT_KEY}`)
 
@@ -10,7 +10,7 @@ function RequestService ({ hubId, param }) {
     redirect: 'follow'
   };
 
-  return fetch(`${baseURL}/${hubId}/${param}`, requestOptions)
+  return fetch(`${baseURL}${param}`, requestOptions)
   
 }
 

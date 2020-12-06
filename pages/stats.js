@@ -1,55 +1,54 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 
 import SocialMedia from '../components/SocialMedia'
 import Section from '../components/Section'
 import Spinner from '../components/Spinner'
 import RequestService from '../services/RequestServices'
-import LeaderboardList from '../components/LeaderboardList'
+import StatsList from '../components/StatsList'
 import Header from '../components/Header'
 
-export default function Home() {
+const Stats = () => {
+
   const [viewHubPro, setViewHubPro] = useState(true)
   const [viewHubQualy, setViewHubQualy] = useState(false)
-  const [leaderboard, setLeaderboard] = useState([])
-  const [users, setUsers] = useState([])
-  const [isLoading, setLoading] = useState(true)
+  const [collection, setCollection] = useState([])
+    const [isLoading, setLoading] = useState(true)
+  
 
   useEffect(() => {
     let id = ''
     if(viewHubPro){
-      id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_PRO
+      id = process.env.NEXT_PUBLIC_ID_HUB_PRO
     } else {
-      id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_PRO
+      id = process.env.NEXT_PUBLIC_ID_HUB_QUALY
     }
-    const resource = `leaderboards/${id}`
+    const resource = `hubs/${id}/stats`
     RequestService({ param: resource})
     .then(response => response.json())
-    .then(results =>{
+    .then(result =>{
       setLoading(false)
-      setLeaderboard(results.leaderboard)
-      setUsers(results.items)
-      console.log(results)
+      setCollection(result.players)
     })
     .catch(error =>{
       console.log("users: ", error)
     })
-  }, [viewHubPro])
     
+  }, [viewHubPro])
 
   function getList(){
     while(isLoading){
       return <Spinner showSpinner={true} />
     }
-    return <LeaderboardList leaderboard={leaderboard} users={users} viewHubPro={viewHubPro} />
+    return <StatsList collection={collection} />
   }
 
-  return (
+  return ( 
     <div>
       <div className="py-5 mx-auto" >
         <img src="logo.svg"  className=" h-1/4 w-1/4 mx-auto"/>
       </div>
       <SocialMedia />
-      <Header active={1} />
+      <Header active={2} />
       <div className="flex items-center space-x-3 mt-7 justify-center py-6">
         <Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} />
         <Section title="HUB QUALY" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} />
@@ -57,6 +56,8 @@ export default function Home() {
       <div>
         {getList()}
       </div>
-    </div>
-  )
+  </div>
+   );
 }
+ 
+export default Stats;

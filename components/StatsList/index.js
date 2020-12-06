@@ -1,7 +1,7 @@
 import React from 'react'
 
-const List = ({collection = [], }) => {
-  return ( 
+const StatsList = ({collection = [], }) => {
+  return (
     <table className="w-10/12 my-8 text-center mx-auto">
       <thead>
         <tr className="text-gray-400">
@@ -15,7 +15,7 @@ const List = ({collection = [], }) => {
       <tbody className="text-gray-50">
         {collection.map(user =>{
           return(
-            <tr>
+            <tr key={user.player_id}>
               <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg"> {user['nickname']} </td>
               <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg "> {user.stats['Average K/R Ratio']} </td>
               <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg "> {user.stats['Win Rate %']}%</td>
@@ -29,4 +29,4 @@ const List = ({collection = [], }) => {
    );
 }
  
-export default List;
+export default StatsList;
