@@ -7,7 +7,7 @@ const MainLayout = ({children}) => {
        <div className="max-w-screen-md min-h-screen h-full  mx-auto pb-6 bg-gray-700" >
         {children}
       </div>
-      <h4 className="text-purple-400 text-center py-4 place-self-end"> Windingo League &copy; </h4>
+      <h4 className="text-indigo-500 text-center py-4"> Windingo League &copy; </h4>
     </div>
    );
 }

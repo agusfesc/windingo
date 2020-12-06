@@ -15,12 +15,12 @@ const Contact = () => {
       <Header active={3} />
       <div className="flex flex-col items-center text-lg">
         <p className="text-center m-6 text-white">
-          For make a report, please complete this form
+          Para hacer un reporte, por favor rellene el siguiente formulario
         </p>
         <a target="_blank" href="https://forms.gle/cmKSYsViHo9aRgse8" 
         className="w-6/12 object-center flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 m-6"
         >
-          REPORT FORM
+          FORMULARIO DE REPORTES
           </a>
       </div>
   </div>

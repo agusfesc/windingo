@@ -2,18 +2,18 @@ import React from 'react'
 
 const LeaderboardList = ({leaderboard = [], users = [], viewHubPro,}) => {
   const hubProPrizePool = ['175 USD', '125 USD', '100 USD', '50 USD', '50 USD', '25 USD', '25 USD', '25 USD', '25 USD', '25 USD',]
-  const hubQualyPrizePool = ["Ascend", "Ascend"]
+  const hubQualyPrizePool = ["Asciende", "Asciende"]
   return ( 
     <div>
-      <h1 className="text-center text-gray-100"> {leaderboard['leaderboard_name']} </h1>
+      <h1 className="text-center font-semibold text-gray-100 py-2"> {leaderboard['leaderboard_name']} </h1>
       <table className="w-10/12 my-8 text-center mx-auto">
         <thead>
           <tr className="text-gray-400">
             <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Nick</th>
-            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Points</th>
-            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Matches Won </th>
-            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Lost Matches</th>
-            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Prize</th>
+            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Puntos</th>
+            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Partidas Ganadas </th>
+            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Partidas Perdidas</th>
+            <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Premios</th>
           </tr>
         </thead>
         <tbody className="text-gray-50">

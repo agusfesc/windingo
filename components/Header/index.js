@@ -12,17 +12,17 @@ const Header = ({active}) => {
       <ul className="flex flex-row justify-center space-x-10">
         <li >
           <Link href="/">
-            <a className={active === 1 ? buttonActived : buttonDisabled} >Home</a>
+            <a className={active === 1 ? buttonActived : buttonDisabled} >Inicio</a>
           </Link>
         </li>
         <li>
           <Link href="/stats">
-            <a className={active === 2 ? buttonActived : buttonDisabled} >Stats</a>
+            <a className={active === 2 ? buttonActived : buttonDisabled} >Estadisticas</a>
           </Link>
         </li>
         <li>
           <Link href="/contact">
-            <a className={active === 3 ? buttonActived : buttonDisabled} >Contact</a>
+            <a className={active === 3 ? buttonActived : buttonDisabled} >Reportes</a>
           </Link>
         </li>
       </ul>

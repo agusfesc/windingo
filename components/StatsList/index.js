@@ -7,9 +7,9 @@ const StatsList = ({collection = [], }) => {
         <tr className="text-gray-400">
           <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Nick</th>
           <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">K/D Ratio</th>
-          <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Win Rate</th>
+          <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Porcentaje de Victoria</th>
           <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Wins</th>
-          <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Matches Played</th>
+          <th className="font-normal px-1 pt-0 pb-3 border-b border-gray-100 ">Partidas Jugadas</th>
         </tr>
       </thead>
       <tbody className="text-gray-50">

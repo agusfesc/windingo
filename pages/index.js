@@ -15,11 +15,12 @@ export default function Home() {
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
     let id = ''
     if(viewHubPro){
       id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_PRO
     } else {
-      id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_PRO
+      id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_QUALY
     }
     const resource = `leaderboards/${id}`
     RequestService({ param: resource})

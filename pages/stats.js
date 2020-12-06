@@ -12,10 +12,11 @@ const Stats = () => {
   const [viewHubPro, setViewHubPro] = useState(true)
   const [viewHubQualy, setViewHubQualy] = useState(false)
   const [collection, setCollection] = useState([])
-    const [isLoading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true)
   
 
   useEffect(() => {
+    setLoading(true)
     let id = ''
     if(viewHubPro){
       id = process.env.NEXT_PUBLIC_ID_HUB_PRO
