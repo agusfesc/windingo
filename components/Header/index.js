@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const Header = ({active}) => {
 
-  const buttonActived ="bg-gray-500 text-white hover:bg-gray-800 hover:text-gray-200 px-8 py-2 rounded-md text-sm md:text-md font-medium"
-  const buttonDisabled = "bg-gray-900 text-white hover:bg-gray-800 hover:text-gray-200 px-8 py-2 rounded-md text-sm md:text-md font-medium"
+  const buttonActived ="bg-gray-500 text-white hover:bg-gray-800 hover:text-gray-200 px-4 lg:px-8 py-2 rounded-md text-sm md:text-md font-medium"
+  const buttonDisabled = "bg-gray-900 text-white hover:bg-gray-800 hover:text-gray-200 px-4 lg:px-8 py-2 rounded-md text-sm md:text-md font-medium"
 
 
   return ( 

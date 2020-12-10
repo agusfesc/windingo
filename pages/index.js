@@ -10,6 +10,8 @@ import Header from '../components/Header'
 export default function Home() {
   const [viewHubPro, setViewHubPro] = useState(true)
   const [viewHubQualy, setViewHubQualy] = useState(false)
+  const [viewHubMedium, setViewHubMedium] = useState(false)
+
   const [leaderboard, setLeaderboard] = useState([])
   const [users, setUsers] = useState([])
   const [isLoading, setLoading] = useState(true)
@@ -19,7 +21,9 @@ export default function Home() {
     let id = ''
     if(viewHubPro){
       id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_PRO
-    } else {
+    } else if (viewHubMedium) {
+      id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_MEDIUM
+    } else if(viewHubQualy) {
       id = process.env.NEXT_PUBLIC_ID_LEADERBOARD_QUALY
     }
     const resource = `leaderboards/${id}`
@@ -33,14 +37,14 @@ export default function Home() {
     .catch(error =>{
       console.log(error)
     })
-  }, [viewHubPro])
+  }, [viewHubPro, viewHubMedium, viewHubQualy])
     
 
   function getList(){
     while(isLoading){
       return <Spinner showSpinner={true} />
     }
-    return <LeaderboardList leaderboard={leaderboard} users={users} viewHubPro={viewHubPro} />
+    return <LeaderboardList leaderboard={leaderboard} users={users} hubs={{viewHubPro, viewHubQualy, viewHubMedium}} />
   }
 
   return (
@@ -51,8 +55,9 @@ export default function Home() {
       <SocialMedia />
       <Header active={1} />
       <div className="flex items-center space-x-3 mt-7 justify-center py-6">
-        <Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} />
-        <Section title="HUB QUALY" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} />
+        <Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} handleCloseTwo={setViewHubMedium} />
+        <Section title="HUB QUALY A" isActive={viewHubMedium} handleOpen={setViewHubMedium} handleClose={setViewHubPro} handleCloseTwo={setViewHubQualy} />
+        <Section title="HUB QUALY B" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} handleCloseTwo={setViewHubMedium} />
       </div>
       <div>
         {getList()}

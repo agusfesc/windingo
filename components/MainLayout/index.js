@@ -8,6 +8,7 @@ const MainLayout = ({children}) => {
       <Head>
         <title>Windingo League</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
       <div className="bg-gray-700 w-full">
         <div className="max-w-screen-md min-h-screen h-full  mx-auto pb-6 bg-gray-700" >

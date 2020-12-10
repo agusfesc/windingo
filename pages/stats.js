@@ -11,6 +11,8 @@ const Stats = () => {
 
   const [viewHubPro, setViewHubPro] = useState(true)
   const [viewHubQualy, setViewHubQualy] = useState(false)
+  const [viewHubMedium, setViewHubMedium] = useState(false)
+
   const [collection, setCollection] = useState([])
   const [isLoading, setLoading] = useState(true)
   
@@ -20,6 +22,8 @@ const Stats = () => {
     let id = ''
     if(viewHubPro){
       id = process.env.NEXT_PUBLIC_ID_HUB_PRO
+    } else if (viewHubMedium) {
+      id = process.env.NEXT_PUBLIC_ID_HUB_MEDIUM
     } else {
       id = process.env.NEXT_PUBLIC_ID_HUB_QUALY
     }
@@ -34,7 +38,7 @@ const Stats = () => {
       console.log(error)
     })
     
-  }, [viewHubPro])
+  }, [viewHubPro, viewHubQualy, viewHubMedium])
 
   function getList(){
     while(isLoading){
@@ -51,8 +55,9 @@ const Stats = () => {
       <SocialMedia />
       <Header active={2} />
       <div className="flex items-center space-x-3 mt-7 justify-center py-6">
-        <Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} />
-        <Section title="HUB QUALY" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} />
+        <Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} handleCloseTwo={setViewHubMedium} />
+        <Section title="HUB QUALY A" isActive={viewHubMedium} handleOpen={setViewHubMedium} handleClose={setViewHubPro} handleCloseTwo={setViewHubQualy} />
+        <Section title="HUB QUALY B" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} handleCloseTwo={setViewHubMedium} />
       </div>
       <div>
         {getList()}

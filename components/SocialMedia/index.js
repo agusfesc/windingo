@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-
 
 
 const SocialMedia = () => {
@@ -12,7 +10,7 @@ const SocialMedia = () => {
           <img src="waxpeer.svg" className="w-6/12 mx-auto my-5"/>
         </a>
       </div>
-      <div className="mx-auto w-8/12 lg:w-6/12 flex flex-row justify-around my-2.5">
+      <div className="mx-auto w-6/12 flex flex-row justify-around my-2.5">
         <a target="_blank" href="https://twitter.com/WindingoLeague" className="w-4/12 md:w-2/12 ">
           <img src="twitter.svg" className="mx-3 md:mx-2.5 cursor-pointer" />
         </a>
