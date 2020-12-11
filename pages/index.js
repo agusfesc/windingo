@@ -54,7 +54,7 @@ export default function Home() {
       </div>
       <SocialMedia />
       <Header active={1} />
-      <div className="flex items-center space-x-3 mt-7 justify-center py-6">
+      <div className="flex justify-center py-8 ">
         <Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} handleCloseTwo={setViewHubMedium} />
         <Section title="HUB QUALY A" isActive={viewHubMedium} handleOpen={setViewHubMedium} handleClose={setViewHubPro} handleCloseTwo={setViewHubQualy} />
         <Section title="HUB QUALY B" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} handleCloseTwo={setViewHubMedium} />

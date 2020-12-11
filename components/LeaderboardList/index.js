@@ -5,6 +5,14 @@ const LeaderboardList = ({leaderboard = [], users = [], hubs,}) => {
   const hubQualyAPrizePool = ["Asciende", "Asciende",]
   const hubQualyBPrizePool = ["Asciende", "Asciende", "Asciende", "Asciende", "Asciende",]
   const { viewHubPro, viewHubQualy, viewHubMedium } = hubs
+  
+
+
+  const openInNewTab = (url) => {
+      const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+      if (newWindow) newWindow.opener = null
+  }
+
   return ( 
     <div>
       <h1 className="text-center font-semibold text-gray-100 py-2"> {leaderboard['leaderboard_name']} </h1>
@@ -28,8 +36,9 @@ const LeaderboardList = ({leaderboard = [], users = [], hubs,}) => {
             } else {
               prizePool = hubQualyBPrizePool
             }
+            
             return(
-              <tr key={index} >
+              <tr key={index} onClick={() => {openInNewTab(`https://www.faceit.com/es/players/${user.player['nickname']}`)}} className="cursor-pointer hover:bg-gray-600" >
                 <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg"> {user.player['nickname']} </td>
                 <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg "> {user['points']} </td>
                 <td className="sm:p-3 py-2 px-1 border-b border-gray-500 text-sm md:text-lg "> {user['won']}</td>

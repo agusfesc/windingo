@@ -3,29 +3,23 @@ import Link from 'next/link'
 
 const Header = ({active}) => {
 
-  const buttonActived ="bg-gray-500 text-white hover:bg-gray-800 hover:text-gray-200 px-4 lg:px-8 py-2 rounded-md text-sm md:text-md font-medium"
-  const buttonDisabled = "bg-gray-900 text-white hover:bg-gray-800 hover:text-gray-200 px-4 lg:px-8 py-2 rounded-md text-sm md:text-md font-medium"
-
+  const buttonActived = "text-white hover:bg-gray-800 hover:text-gray-200 w-4/12 md:w-1/5 text-center text-lg md:text-xl cursor-pointer rounded-lg font-normal "
+  const buttonDisabled = "text-white hover:bg-gray-800 hover:text-gray-200 w-4/12 md:w-1/5 text-center text-sm md:text-lg cursor-pointer rounded-lg font-normal "
 
   return ( 
-    <div className="mx-auto m-12">
-      <ul className="flex flex-row justify-center space-x-10">
-        <li >
+    <div className="flex justify-center py-8 space-x-6 md:space-x-14">
+ 
           <Link href="/">
             <a className={active === 1 ? buttonActived : buttonDisabled} >Inicio</a>
           </Link>
-        </li>
-        <li>
+
           <Link href="/stats">
             <a className={active === 2 ? buttonActived : buttonDisabled} >Estadisticas</a>
           </Link>
-        </li>
-        <li>
+
           <Link href="/contact">
-            <a className={active === 3 ? buttonActived : buttonDisabled} >Reportes</a>
+            <a className={active === 3 ? buttonActived : buttonDisabled} >Contacto</a>
           </Link>
-        </li>
-      </ul>
     </div>
    );
 }

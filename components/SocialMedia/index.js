@@ -4,7 +4,7 @@ import React from 'react'
 const SocialMedia = () => {
   return ( 
     <div>
-      <div className=" container mx-auto ">
+      <div className=" mx-auto ">
         <h1 className="text-indigo-500 text-center my-2" >Powered By</h1>
         <a target="_blank" href="https://waxpeer.com/">
           <img src="waxpeer.svg" className="w-6/12 mx-auto my-5"/>
