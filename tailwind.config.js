@@ -26,6 +26,12 @@ module.exports = {
 			indigo: colors.indigo,
 			purple: colors.violet,
 			pink: colors.pink,
+			app: {
+				onyx: '#292929',
+				jet: '#1F1F1F',
+				maximum: '#BDB2FF',
+				melon: '#A0C4FF',
+			},
 		},
 		spacing: {
 			px: '1px',

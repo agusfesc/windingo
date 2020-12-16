@@ -11,11 +11,11 @@ const MainLayout = ({children}) => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
-			<div className="bg-gray-700 w-full">
-				<div className="max-w-screen-md min-h-screen h-full  mx-auto pb-6 bg-gray-700" >
+			<div className="bg-app-onyx w-full">
+				<div className="max-w-screen-md min-h-screen h-full  mx-auto pb-6 bg-app-onyx" >
 					{children}
 				</div>
-				<h4 className="text-indigo-500 text-center py-4"> Windingo League &copy; </h4>
+				<h4 className="text-app-melon font-semibold text-center py-4"> Windingo League &copy; </h4>
 			</div>
 		</div>
 	)
