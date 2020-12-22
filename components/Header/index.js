@@ -22,6 +22,9 @@ const Header = ({active}) => {
 				<Link href="/contact">
 					<a className={active === 3 ? buttonActived : buttonDisabled} >Contacto</a>
 				</Link>
+				<Link href="/servers">
+					<a className={active === 4 ? buttonActived : buttonDisabled} >Servers</a>
+				</Link>
 			</div>
 			<div className="flex flex-row items-center justify-between space-x-8 mr-3">
 				<a target="_blank" rel="noreferrer" href="https://twitter.com/WindingoLeague" className="w-5 h-5 md:w-8 md:h-8">

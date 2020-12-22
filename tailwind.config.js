@@ -31,6 +31,7 @@ module.exports = {
 				jet: '#1F1F1F',
 				maximum: '#BDB2FF',
 				melon: '#A0C4FF',
+				white: '#FFFFFC',
 			},
 		},
 		spacing: {
