@@ -8,24 +8,27 @@ import StatsList from '../components/StatsList'
 import Header from '../components/Header'
 
 const Stats = () => {
-
-	const [viewHubPro, setViewHubPro] = useState(true)
-	const [viewHubQualy, setViewHubQualy] = useState(false)
-	const [viewHubMedium, setViewHubMedium] = useState(false)
-
 	const [collection, setCollection] = useState([])
 	const [isLoading, setLoading] = useState(true)
+	const [activeHub, setActiveHub] = useState(1)
   
 
 	useEffect(() => {
 		setLoading(true)
 		let id = ''
-		if(viewHubPro){
+		switch(activeHub){
+		case 1:
 			id = process.env.NEXT_PUBLIC_ID_HUB_PRO
-		} else if (viewHubMedium) {
-			id = process.env.NEXT_PUBLIC_ID_HUB_MEDIUM
-		} else {
-			id = process.env.NEXT_PUBLIC_ID_HUB_QUALY
+			break
+		case 2:
+			id = process.env.NEXT_PUBLIC_ID_HUB_QUALY_A
+			break
+		case 3:
+			id = process.env.NEXT_PUBLIC_ID_HUB_QUALY_B
+			break
+		case 4:
+			id = process.env.NEXT_PUBLIC_ID_HUB_QUALY_C
+			break
 		}
 		const resource = `hubs/${id}/stats`
 		RequestService({ param: resource})
@@ -38,7 +41,7 @@ const Stats = () => {
 				console.log(error)
 			})
     
-	}, [viewHubPro, viewHubQualy, viewHubMedium])
+	}, [activeHub,])
 
 	function getList(){
 		while(isLoading){
@@ -52,9 +55,10 @@ const Stats = () => {
 			<Header active={2} />
 			<SocialMedia />
 			<div className="flex items-center space-x-3 mt-7 justify-center py-6">
-				<Section title="HUB PRO" isActive={viewHubPro} handleOpen={setViewHubPro} handleClose={setViewHubQualy} handleCloseTwo={setViewHubMedium} />
-				<Section title="HUB QUALY A" isActive={viewHubMedium} handleOpen={setViewHubMedium} handleClose={setViewHubPro} handleCloseTwo={setViewHubQualy} />
-				<Section title="HUB QUALY B" isActive={viewHubQualy} handleOpen={setViewHubQualy} handleClose={setViewHubPro} handleCloseTwo={setViewHubMedium} />
+				<Section title="HUB PRO" isActive={activeHub === 1 ? true : false} handleOpen={setActiveHub} value={1} />
+				<Section title="HUB QUALY A" isActive={activeHub === 2 ? true : false} handleOpen={setActiveHub} value={2} />
+				<Section title="HUB QUALY B" isActive={activeHub === 3 ? true : false} handleOpen={setActiveHub} value={3} />
+				<Section title="HUB QUALY C" isActive={activeHub === 4 ? true : false} handleOpen={setActiveHub} value={4} />
 			</div>
 			<div>
 				{getList()}
