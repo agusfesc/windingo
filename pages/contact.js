@@ -8,7 +8,7 @@ const Contact = () => {
 
 	return ( 
 		<div>
-			<Header active={3} />
+			<Header active={4} />
 			<SocialMedia />
 			<div className="flex flex-col items-center text-lg">
 				<p className="text-center m-6 text-white">

@@ -6,8 +6,8 @@ import Logo from '../../public/logo.svg'
 // eslint-disable-next-line react/prop-types
 const Header = ({active}) => {
 
-	const buttonActived = 'text-white text-xs sm:text-sm md:text-base font-medium'
-	const buttonDisabled = 'text-white text-xs sm:text-sm md:text-base text-opacity-70'
+	const buttonActived = 'text-white text-xxs sm:text-sm md:text-base font-medium'
+	const buttonDisabled = 'text-white text-xxs sm:text-sm md:text-base text-opacity-70'
 
 	return ( 
 		<div className="flex flex-row justify-between sticky top-0 w-full h-14 bg-app-jet rounded-b-xl shadow-sm">
@@ -19,12 +19,13 @@ const Header = ({active}) => {
 				<Link href="/stats">
 					<a className={active === 2 ? buttonActived : buttonDisabled} >Estadisticas</a>
 				</Link>
-				<Link href="/contact">
-					<a className={active === 3 ? buttonActived : buttonDisabled} >Contacto</a>
-				</Link>
 				<Link href="/servers">
-					<a className={active === 4 ? buttonActived : buttonDisabled} >Servers</a>
+					<a className={active === 3 ? buttonActived : buttonDisabled} >Servers</a>
 				</Link>
+				<Link href="/contact">
+					<a className={active === 4 ? buttonActived : buttonDisabled} >Contacto</a>
+				</Link>
+			
 			</div>
 			<div className="flex flex-row items-center justify-between space-x-8 mr-3">
 				<a target="_blank" rel="noreferrer" href="https://twitter.com/WindingoLeague" className="w-5 h-5 md:w-8 md:h-8">

@@ -3,8 +3,9 @@ import React from 'react'
 // eslint-disable-next-line react/prop-types
 const LeaderboardList = ({leaderboard = [], users = [], hubs,}) => {
 	const hubProPrizePool = ['175 USD', '125 USD', '100 USD', '50 USD', '50 USD', '25 USD', '25 USD', '25 USD', '25 USD', '25 USD',]
-	const hubQualyAPrizePool = ['Asciende', 'Asciende',]
-	const hubQualyBPrizePool = ['Asciende', 'Asciende', 'Asciende', 'Asciende', 'Asciende',]
+	const hubQualyAPrizePool = ['Asciende',]
+	const hubQualyBPrizePool = ['Asciende',]
+	const hubQualyCPrizePool = ['Asciende', 'Asciende']
 	// eslint-disable-next-line react/prop-types
 	const { viewHubPro, viewHubQualy, viewHubMedium } = hubs
   

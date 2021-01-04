@@ -31,7 +31,7 @@ module.exports = {
 				jet: '#1F1F1F',
 				maximum: '#BDB2FF',
 				melon: '#A0C4FF',
-				white: '#FFFFFC',
+				white: '#F2EFE9',
 			},
 		},
 		spacing: {
@@ -198,6 +198,7 @@ module.exports = {
 			],
 		},
 		fontSize: {
+			xxs: ['0.50rem', { lineHeight: '0.75rem' }],
 			xs: ['0.75rem', { lineHeight: '1rem' }],
 			sm: ['0.875rem', { lineHeight: '1.25rem' }],
 			base: ['1rem', { lineHeight: '1.5rem' }],
