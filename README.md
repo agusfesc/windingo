@@ -2,6 +2,7 @@
 
 > This is a project to show statistics from a CSGO League
 
-<img src="F:\Bibliotecas y Documentos\Escritorio\Programas\windingo\WINDINGO LEAGUE\WINDINGO-LEAGUE-LOGO.png" style="zoom:33%;" />
+<img src="https://i.imgur.com/LNv6Wdz.png" alt="https://i.imgur.com/LNv6Wdz.png" style="zoom:30%;" />
 
 ### More info at: https://windingo.ar/
+
