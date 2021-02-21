@@ -24,6 +24,16 @@ const ServersList = ({servers = []}) => {
 	return ( 
 		<>
 			{show ? <Alert message='IP COPIADA' /> : null}
+			<div className="flex flex-col items-center text-lg">
+				<p className="text-center m-2 text-white">
+          Recorda que podes adquirir tu vip desde el siguiente enlace!
+				</p>
+				<a target="_blank" rel="noreferrer" href="http://cscagames.com.ar/index.php#member_vip" 
+					className="w-6/12 object-center flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-500 m-3"
+				>
+          ADQUIRI TU VIP
+				</a>
+			</div>
 			<div className="flex flex-col lg:flex-row flex-wrap content-center justify-between">
 				{servers.map((server, index) =>{
 					return(

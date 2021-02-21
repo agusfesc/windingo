@@ -5,7 +5,7 @@ const LeaderboardList = ({leaderboard = [], users = [], activeHub,}) => {
 	const hubProPrizePool = ['175 USD', '125 USD', '100 USD', '50 USD', '50 USD', '25 USD', '25 USD', '25 USD', '25 USD', '25 USD',]
 	const hubQualyAPrizePool = ['Asciende',]
 	const hubQualyBPrizePool = ['Asciende']
-	const hubQualyCPrizePool = ['Asciende', 'Asciende']
+	const hubQualyCPrizePool = ['PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', 'PLAYOFF', ]
   
 	const openInNewTab = (url) => {
 		const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
